@@ -162,7 +162,7 @@ Option | Description
 `searchable` | include this column in the list search results. Default: `false`.
 `invisible` | specifies if this column is hidden by default. Default: `false`.
 `sortable` | specifies if this column can be sorted. Default: `true`.
-`summable` | specifies if this column can be summed (requires column to be of `type: number`). Default: `true`.
+`summable` | specifies if this column can be summed (requires column to be of `type: number`). Default: `false`.
 `clickable` | if set to false, disables the default click behavior when the column is clicked. Default: `true`.
 `select` | defines a custom SQL select statement to use for the value.
 `valueFrom` | defines a model attribute to use for the value.
