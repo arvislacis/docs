@@ -66,7 +66,7 @@ Option | Description
 `noRecordsDeletedMessage` | a message to display when a bulk delete action is triggered, but no records were deleted, can refer to a [localization string](../plugin/localization).
 `recordsPerPage` | records to display per page, use 0 to disable the pagination. Default: 0
 `perPageOptions` | options to provide the user when selecting how many records to display per page. Default: `[20, 40, 80, 100, 120]`
-`showPageNumbers` | displays page numbers with pagination. Disable this to improve list performance when working with large tables. Default: `true`
+`showPageNumbers` | displays page numbers with pagination. Default: `true`
 `toolbar` | reference to a Toolbar Widget configuration file, or an array with configuration (see below).
 `showSorting` | displays the sorting link on each column. Default: `true`
 `defaultSort` | sets a default sorting column and direction when user preference is not defined. Supports a string or an array with keys `column` and `direction`.
@@ -162,7 +162,7 @@ Option | Description
 `searchable` | include this column in the list search results. Default: `false`.
 `invisible` | specifies if this column is hidden by default. Default: `false`.
 `sortable` | specifies if this column can be sorted. Default: `true`.
-`summable` | specifies if this column can be summed (requires column to be of `type: number`). Default: `true`.
+`summable` | specifies if this column can be summed (requires column to be of `type: number`). Default: `false`.
 `clickable` | if set to false, disables the default click behavior when the column is clicked. Default: `true`.
 `select` | defines a custom SQL select statement to use for the value.
 `valueFrom` | defines a model attribute to use for the value.

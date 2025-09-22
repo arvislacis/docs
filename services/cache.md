@@ -69,16 +69,14 @@ You can even specify multiple Memcached servers for failover:
 ],
 ```
 
-### Redis
-
-> If you wish to use the default **predis** driver, you will need to either install `predis/predis` directly via Composer or install the [Drivers plugin](http://github.com/wintercms/wn-drivers-plugin).
+### Redis / Valkey
 
 The Redis configuration for your application is located in the `config/database.php` configuration file. Within this file, you will see a `redis` array containing the Redis servers used by your application:
 
 ```php
 'redis' => [
 
-    'client' => 'predis',
+    'client' => env('REDIS_CLIENT', 'phpredis'),
 
     'default' => [
         'host'     => '127.0.0.1',
@@ -90,7 +88,9 @@ The Redis configuration for your application is located in the `config/database.
 ],
 ```
 
-By default, the Redis cache functionality will use the `predis` client package to provide caching abilities through Redis. You may also use `phpredis` as the client, which uses the PHP `redis` extension. This can be [installed through PECL](http://pecl.php.net/package/redis).
+By default, the Redis cache functionality will use the `phpredis` client package to provide caching abilities for Redis through the PHP `redis` extension, which may be [installed through PECL](http://pecl.php.net/package/redis). If you are unable to install this extension, you may change the `client` option to `predis` to use the [Predis](https://github.com/predis/predis) driver, which provides a PHP client for Redis that does not need the extension.
+
+> If you wish to use the **predis** driver, you will need to either install `predis/predis` directly via Composer or install the [Drivers plugin](http://github.com/wintercms/wn-drivers-plugin).
 
 When using `predis`, you may define an `options` array value in your Redis connection definition, allowing you to specify a set of Predis [client options](https://github.com/nrk/predis/wiki/Client-Options).
 
@@ -113,6 +113,8 @@ When using `predis`, you may define an `options` array value in your Redis conne
 ```
 
 If your Redis server requires authentication, you may supply a password by adding a `password` configuration item to your Redis server configuration array.
+
+> For users of the Valkey caching server, you may use the same configuration to connect to a Valkey instance, as it is currently completely compatible with the Redis API.
 
 ### APCu
 
