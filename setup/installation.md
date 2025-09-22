@@ -9,6 +9,7 @@ There are three ways you can install Winter:
 1. Using the [Composer package manager](../architecture/using-composer#installing-winter-via-composer) (if you are comfortable using the command line)
 2. The [Web-based installer](#web-based-installation) (most similar to the WordPress web installer)
 3. Using the [Softaculous installler](https://www.softaculous.com/apps/cms/WinterCMS) (if your hosting provider supports it).
+4. Using the [Winter CMS Docker image](https://hub.docker.com/r/wintercms/winter).
 
 Before you proceed, check that your server meets the minimum system requirements:
 
@@ -68,6 +69,16 @@ The [Web Installer](https://github.com/wintercms/web-installer) is the recommend
 ## Command-line installation
 
 If you feel more comfortable with a command-line or want to use Composer, there is a CLI install process on the [Using Composer page](../architecture/using-composer).
+
+## Docker image
+
+We provide an official Winter CMS Docker image, available either on the [Docker Hub](https://hub.docker.com/r/wintercms/winter) or the [GitHub Container Repository](https://github.com/wintercms/docker/pkgs/container/winter).
+
+This Docker image is built upon the [FrankenPHP web server](https://frankenphp.dev) using PHP 8.4, and is pre-configured to be production-ready and supports all major database server types and caching servers.
+
+To run the Docker image, you must have [Docker](https://www.docker.com/) installed on your server or desktop.
+
+You may find documentation of the usage of this image on the [Winter Docker Image README](https://github.com/wintercms/docker/blob/main/README.md).
 
 ## Post-installation steps
 
